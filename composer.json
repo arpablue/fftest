@@ -1,0 +1,19 @@
+{
+    "name": "arpablue/fftest",
+    "description": "It is a tool to create and execute test unit ver php.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Arpablue\\Fftest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "augusto flores",
+            "email": "eng.aug.flores@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
