@@ -1,0 +1,59 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "91d318d5507734f9268ef9e59ddae200",
+    "packages": [
+        {
+            "name": "arpablue/fieldlist",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/arpablue/FieldList.git",
+                "reference": "1e68961bea6c4b3dcfa50237e032f19a6f764ca8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/arpablue/FieldList/zipball/1e68961bea6c4b3dcfa50237e032f19a6f764ca8",
+                "reference": "1e68961bea6c4b3dcfa50237e032f19a6f764ca8",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ArpaBlue\\FieldList\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Augusto Flores",
+                    "email": "eng.aug.flores@gmail.com"
+                }
+            ],
+            "description": "It is a object to mange a value using a key, but identify each value using uncase-sensitive key. This allow get values using case un-sensitive methods and compare both list, using a strict mode for a exactly comparation of the keys and values, an compare mode only verify the current keys and values aexist in the second luist and the low mode only verify the keys exists in the second list.",
+            "support": {
+                "issues": "https://github.com/arpablue/FieldList/issues",
+                "source": "https://github.com/arpablue/FieldList/tree/v1.0.0"
+            },
+            "time": "2024-05-31T15:05:46+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}
