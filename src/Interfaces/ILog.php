@@ -72,7 +72,16 @@ interface ILog
      * @param string $msg It is the message to be raise in the log object.
      */
     function fail( $msg = "" );
-
+    /**
+     * It show a message as a ERROR message.
+     * @param string $msg It is the message to be raise in the log object.
+     */
+    function block( $msg = "" );
+    /**
+     * It show a message as a FAIL message.
+     * @param string $msg It is the message to be raise in the log object.
+     */
+    function deprecated( $msg = "" );
     /**
      * It show a message as a PASS message.
      * @param string $msg It is the message to be raise in the log object.

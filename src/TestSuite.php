@@ -5,16 +5,18 @@ use ArpaBlue\FFTest\Interfaces\IBeforeAfter;
 use ArpaBlue\FFTest\TestCaseException\BlockException;
 use ArpaBlue\FFTest\TestCaseException\DeprecatedException;
 use ArpaBlue\FFTest\TestCaseException\FailException;
+use ArpaBlue\FFTest\TestCaseException\PassException;
 use ArpaBlue\FFTest\TestObjs\TestCase;
-use ArpaBlue\FFTest\TestObjs\TestSuiteBA;
+use ArpaBlue\FFTest\TestObjs\TestSuiteExceptions;
 use ArpaBlue\FFTest\Tools\ConsoleColors;
+use ArpaBlue\FFTest\Tools\TestCasesState;
 
 /**
  * Class TestSuit
  * @package ArpaBlue\FFTest
  * It contain the basic methods to execute the test cases in the class.
  */
-class TestSuite extends TestSuiteBA implements IBeforeAfter
+class TestSuite extends TestSuiteExceptions implements IBeforeAfter
 {
     /**
      * @var string It is the name of the current test case to be execute.
@@ -115,7 +117,7 @@ class TestSuite extends TestSuiteBA implements IBeforeAfter
         return $res;
     }
 
-    private function executeTextCaseMethod( $method )
+    private function executeTestCaseMethod( $method )
     {
         try {
             if( !method_exists( $this, $method ) )
@@ -123,20 +125,23 @@ class TestSuite extends TestSuiteBA implements IBeforeAfter
                 return true;
             }
             $this->$method();
+        }catch( PassException $ep ){
+            $this->setCurrentTestCaseState( TestCasesState::PASSED );
+            return false;
         }catch( FailException $ef ){
-            $this->setCurrentTestCaseState( TestCaseState::FAILED );
+            $this->setCurrentTestCaseState( TestCasesState::FAILED );
             return false;
         }catch( BlockException $eb ){
-            $this->setCurrentTestCaseState( TestCaseState::BLOCKED );
+            $this->setCurrentTestCaseState( TestCasesState::BLOCKED );
             return false;
         }catch( DeprecatedException $ef ){
-            $this->setCurrentTestCaseState( TestCaseState::DEPRECATED );
+            $this->setCurrentTestCaseState( TestCasesState::DEPRECATED );
             return false;
         }catch( \Exception $e ){
-            $this->setCurrentTestCaseState( TestCaseState::FAILED );
+            $this->setCurrentTestCaseState( TestCasesState::FAILED );
             return false;
         }
-        $this->setCurrentTestCaseState( TestCaseState::PASSED );
+        $this->setCurrentTestCaseState( TestCasesState::PASSED );
         return true;
     }
     /**
@@ -152,12 +157,12 @@ class TestSuite extends TestSuiteBA implements IBeforeAfter
             return false;
         }
         $this->beforeExecution();
-        $this->before();
+        $this->executeTestCaseMethod("before" );
 
         $this->$method();
 
 
-        $this->after();
+        $this->executeTestCaseMethod("after" );
         $this->afterExecution();
         return true;
     }

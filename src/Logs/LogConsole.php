@@ -95,6 +95,20 @@ class LogConsole extends LogNull
     /**
      * @inheritDoc
      */
+    public function block($msg = "")
+    {
+        $this->writeln( '  FAIL: '.$msg , ConsoleColors::RED);
+    }
+    /**
+     * @inheritDoc
+     */
+    public function deprecated($msg = "")
+    {
+        $this->writeln( '  FAIL: '.$msg , ConsoleColors::RED);
+    }
+    /**
+     * @inheritDoc
+     */
     public function pass($msg = "")
     {
         $this->writeln( '  PASS: '.$msg , ConsoleColors::GREEN);

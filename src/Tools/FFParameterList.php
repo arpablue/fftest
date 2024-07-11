@@ -25,7 +25,7 @@ class FFParameterList extends FieldList
         $this->put("target","test"); // It is the forlder or file where the test cases will be executed.
         $this->put("tes_res","test_result"); // it is the folder where the test result will be raised.
         $this->put("output","file"); // It is the way to present the execution of the test results.
-        $this->put("format","txt"); // It i sthe format of the test result.
+        $this->put("format","txt"); // It is the format of the test result.
         $this->put("tp",null);// It i sthe test plan of the execution.
     }
 

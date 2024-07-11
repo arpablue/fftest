@@ -95,4 +95,12 @@ class LogNull extends LogObj
      * @inheritDoc
      */
     public function pass($msg = ""){}
+    /**
+     * @inheritDoc
+     */
+    public function block($msg = ""){}
+    /**
+     * @inheritDoc
+     */
+    public function deprecated($msg = ""){}
 }

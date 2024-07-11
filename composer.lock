@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "91d318d5507734f9268ef9e59ddae200",
+    "content-hash": "1dee6d6a3f63300c2a500cc1c3db7bfa",
     "packages": [
         {
             "name": "arpablue/fieldlist",
